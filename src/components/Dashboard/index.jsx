@@ -33,6 +33,8 @@ import * as mockData from '../../data/mockData';
 import { arrayToCSV } from '../../utils/csvUtils';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import { useReportGenerator } from '../../hooks/useReportGenerator';
+import { ReportGeneratorUI } from '../ReportGeneratorUI';
 
 const Dashboard = () => {
   const { showToast } = useToast();
@@ -44,12 +46,8 @@ const Dashboard = () => {
   const [reportReady, setReportReady] = useState(false);
   const [analyticsModalOpen, setAnalyticsModalOpen] = useState(false);
 
-  // Report generation state (local to Dashboard)
-  const [selectedReport, setSelectedReport] = useState('portfolio-summary');
-  const [reportPeriod, setReportPeriod] = useState('monthly');
-  const [reportFormat, setReportFormat] = useState('csv');
-  const [includeVisualizations, setIncludeVisualizations] = useState(true);
-  const [reportData, setReportData] = useState([]);
+  // Use the custom hook for report generation
+  const reportGen = useReportGenerator({ onToast: showToast });
 
   // Dummy data for validation
   const validationSummary = {
@@ -359,99 +357,8 @@ const Dashboard = () => {
                 <XCircle className="w-5 h-5" />
               </button>
             </div>
-            <div className="card-body space-y-6">
-              {/* Report Type Selection */}
-              <div>
-                <label className="block text-sm font-medium text-text-primary mb-2">Report Type</label>
-                <div className="flex flex-wrap gap-2">
-                  {reportTypes.map((r) => {
-                    const Icon = r.icon;
-                    return (
-                      <button
-                        key={r.id}
-                        onClick={() => setSelectedReport(r.id)}
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${selectedReport === r.id ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-900 dark:text-primary-100' : 'border-secondary-200 dark:border-secondary-700 text-text-secondary hover:border-primary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800/50'}`}
-                      >
-                        <Icon className="w-4 h-4" /> {r.name}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              {/* Period Selection */}
-              <div>
-                <label className="block text-sm font-medium text-text-primary mb-2">Reporting Period</label>
-                <div className="flex flex-wrap gap-2">
-                  {periods.map((p) => (
-                    <button
-                      key={p.value}
-                      onClick={() => setReportPeriod(p.value)}
-                      className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${reportPeriod === p.value ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-900 dark:text-primary-100' : 'border-secondary-200 dark:border-secondary-700 text-text-secondary hover:border-primary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800/50'}`}
-                    >
-                      {p.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Format Selection */}
-              <div>
-                <label className="block text-sm font-medium text-text-primary mb-2">Output Format</label>
-                <div className="flex flex-wrap gap-2">
-                  {formats.map((f) => (
-                    <button
-                      key={f.value}
-                      onClick={() => setReportFormat(f.value)}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${reportFormat === f.value ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-900 dark:text-primary-100' : 'border-secondary-200 dark:border-secondary-700 text-text-secondary hover:border-primary-300 hover:bg-secondary-50 dark:hover:bg-secondary-800/50'}`}
-                    >
-                      <f.icon className="w-4 h-4" /> {f.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Options */}
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="viz-dashboard"
-                  checked={includeVisualizations}
-                  onChange={e => setIncludeVisualizations(e.target.checked)}
-                  className="form-checkbox"
-                />
-                <label htmlFor="viz-dashboard" className="text-sm text-text-primary">Include Visualizations</label>
-              </div>
-              {/* Generate Button & Progress */}
-              <div>
-                <button
-                  className="btn btn-primary w-full"
-                  onClick={handleGenerateReport}
-                  disabled={isGenerating}
-                >
-                  {isGenerating ? (
-                    <>
-                      <div className="spinner w-4 h-4"></div> Generating Report...
-                    </>
-                  ) : (
-                    <>
-                      <FileText className="w-4 h-4" /> Generate Report
-                    </>
-                  )}
-                </button>
-                {isGenerating && (
-                  <div className="mt-4">
-                    <div className="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                      <div className="bg-gradient-primary h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }}></div>
-                    </div>
-                    <div className="text-xs text-text-secondary mt-2">Generating...</div>
-                  </div>
-                )}
-                {reportReady && !isGenerating && (
-                  <div className="mt-4 flex flex-col items-center gap-2">
-                    <CheckCircle className="w-6 h-6 text-success-600" />
-                    <div className="text-sm text-success-700">Report ready!</div>
-                    <button className="btn btn-success" onClick={handleDownloadReport}><Download className="w-4 h-4" /> Download Report</button>
-                  </div>
-                )}
-              </div>
+            <div className="card-body">
+              <ReportGeneratorUI {...reportGen} />
             </div>
           </div>
         );
