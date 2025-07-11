@@ -50,7 +50,7 @@ A modern, full-stack application for automated, AI-driven reporting and analytic
 
 #### **1. Clone the repository**
 ```bash
-git clone <your-repo-url>
+git clone (https://github.com/Slonetech/Lidar-AI-Reporting-Automation-UI-new.git)
 cd project
 ```
 
