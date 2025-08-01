@@ -7,7 +7,6 @@ const portfolioSummary = [
     { date: '2023', totalLoans: 5600, totalAmount: 240000000, repaid: 168000000, outstanding: 72000000, period: 'yearly' },
 ];
 
-
 // Member Analysis: Demographics, activity, loan status
 const members = [
     { id: 1, name: "Alice Mwangi", joinDate: "2021-03-15", age: 34, gender: "F", status: "active", loans: 2, lastActive: "2024-06-01" },
