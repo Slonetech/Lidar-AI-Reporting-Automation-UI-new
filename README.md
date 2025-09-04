@@ -2,8 +2,6 @@
 
 A modern, full-stack application for automated, AI-driven reporting and analytics. This project provides a robust dashboard for generating, visualizing, and exporting financial and member data reports, with a scalable backend and a sleek, interactive frontend.
 
----
-
 ## ✨ Features
 
 - 📊 **Dynamic Dashboard:** Visualize key metrics and trends with interactive charts and tables.
