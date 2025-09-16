@@ -1,0 +1,13 @@
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.csproj.AssemblyReference.cache
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.AssemblyInfoInputs.cache
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.AssemblyInfo.cs
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.csproj.CoreCompileInputs.cache
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.sourcelink.json
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\bin\Debug\net9.0\Lidar.Core.deps.json
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\bin\Debug\net9.0\Lidar.Core.dll
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\bin\Debug\net9.0\Lidar.Core.pdb
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.dll
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\refint\Lidar.Core.dll
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\Lidar.Core.pdb
+C:\Users\Slonetech\Documents\innovation week2025\Lidar-AI-Reporting-Automation-UI-new\LidarBackend\Lidar.Core\obj\Debug\net9.0\ref\Lidar.Core.dll
